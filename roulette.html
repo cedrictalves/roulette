@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hells Kitchen Roulette</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"/>
+    <link rel="icon" type="image/png" href="images/icon.png" />
+</head>
+
+<body>
+    <!-- particles div -->
+    <div id="particles-js"></div>
+
+    <!-- app container -->
+    <div id="bloc-page">
+        <!-- fullscreen btn -->
+        <div class="fullscreen"><i class="fas fa-compress"></i></div>
+        <!-- roulette black support -->
+        <img class="roulette-support" src="images/roulette-support.png">
+        <!-- roulette side and arrow -->
+        <img class="roulette-arrow" src="images/roulette-arrow.png">
+        <!-- roulette elle which turn -->
+        <img class="roulette" src="images/roulette.png">
+        <!-- centered fixed logo with click event -->
+        <img class="logo-hells" src="images/logoHells.png">
+        <!-- div which disables to click when the roulette turns -->
+        <div class="disabled"></div>
+
+        <!-- win message container -->
+        <div class="win-elem">
+            <div class="win-elem-board">
+                <!-- centered top logo -->
+                <img class="logo-hells-2" src="images/logoHells.png">
+                <!-- fixed message -->
+                <p class="message-fix">YOU WON</p>
+                <!-- wining price message -->
+                <p class="message"><span style="font-family: sans-serif"> *</span></p>
+                <!-- wining price image -->
+                <img src="" class="win-img">
+                <!-- button to restart the app -->
+                <button class="rejoue">PLAY AGAIN</button>
+            </div>
+        </div>
+
+        <!-- legal message -->
+        <p class="abus">© Hells Kitchen 2020.<br>L'abus d'alcool est dangereux pour la santé, à consommer avec modération.  Design & developped by Cédric Teixeira.<br>* Gain échangeable contre une boisson non alcoolisée.</p>
+    </div>
+    
+
+    <!-- jQuery  -->
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+
+    <!-- particles api  -->
+    <script src="scripts/particles.min.js"></script> 
+    
+    <!-- app js  -->
+    <script src="scripts/app.js"></script>
+</body>
+</html>

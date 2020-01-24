@@ -1,0 +1,296 @@
+// font init
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+
+// remove padding margin to the page + cursot init
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: url(../images/maincursor.png), none;	
+}
+
+// overflow hidden on the body
+body{
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+
+
+// time the roulette turns
+.rotate{
+    transition: transform 9s /*cubic-bezier(0.30, 0.30, 0.30, 1)*/ ease-in-out;
+}
+
+// roulette comes initial position without transition
+.retour{
+    transition: none;
+}
+
+// particles js div
+#particles-js{ 
+    position:absolute; 
+    width: 100%; 
+    height: 100vh;
+}
+
+//app conatiner
+#bloc-page{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/background.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+//fullscreen btn top left
+.fullscreen{
+    margin: 15px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: rgb(91, 91, 91);
+    font-size: 10px;
+    transition: transform 1s ease-in-out;
+    z-index: 21;
+    opacity: 0.3;
+}
+
+//fullscreen class to anim the btn
+.fullscreenRotate{
+    transform: rotate(225deg);
+}
+
+//roulette black support
+.roulette-support{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    width: 47.5%;
+    border-radius: 50%;
+}
+
+//roulette side with arrow
+.roulette-arrow{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 47.5%;
+    animation: shadow 2s linear infinite alternate;
+    border-radius: 50%;
+    border: 3px solid #0c0c0c;
+}
+
+//roulette (the img which turns
+.roulette{
+    width: 42%;
+    z-index: 9;
+}
+
+// center fixed logo
+.logo-hells{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+    width: 18%;
+    border-radius: 50%;
+    animation: shadow 2s linear infinite alternate;
+    background-color: #2A0000;
+    border: 3px solid #0c0c0c;
+    &:hover{
+        cursor: url(../images/hovercursor.png), none;	
+        background-color: rgb(60, 1, 1);
+    }
+}
+
+//transparent div who disable to click while the roulette turns
+.disabled{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    z-index: 15;
+    display: none;
+}
+
+// win message container
+.win-elem{
+    color: rgb(237, 237, 237);
+    width: 100%;
+    height: 100vh;
+    background: url(../images/mockup.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 16;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    //win div flexbox
+    .win-elem-board{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 30px;
+        
+        // logo centered top
+        .logo-hells-2{
+            width: 13%;
+            border-radius: 50%;
+            animation: scale 2s linear infinite alternate;
+            background-color: #2A0000;
+        }
+    
+        // YOU WON / YOU HIT THE LINE message
+        .message-fix{
+            font-family: 'Roboto';
+            letter-spacing: 20px;
+            font-size: 6em;
+            text-align: center;
+            margin-top: 20px;
+            text-shadow: 0px 0px 10px rgba(0, 0, 5, 1);
+            animation: scale 2s linear infinite alternate;
+        }
+        
+        // message (ex: a redbull, a gloss of wine)
+        .message{
+            font-family: "Roboto";
+            letter-spacing: 20px;
+            font-size: 6em;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            text-shadow: 0px 0px 10px rgba(0, 0, 5, 1); 
+            animation: scale 2s linear infinite alternate;
+        }
+
+        // image (ex: shot, glass)
+        .win-img{
+            width: 100px;
+            animation: imgAnim 4s linear infinite;
+        }
+        
+        // button to make restart the roulette
+        .rejoue {
+            width: 250px;
+            height: 100px;
+            background: url(../images/background-button.png);
+            text-align: center;
+            font-family: "Roboto";
+            font-size: 20px;
+            color: rgb(215,215,215);
+            border: none;
+            margin: 50px 0;
+            letter-spacing: 5px;
+            border-radius: 50px;
+            animation: shadow2 1s linear infinite alternate;
+            
+            &:hover{
+                cursor: url(../images/hovercursor.png), none;	
+                background: rgba(255, 255, 255, 0.3);
+                border: 2px solid rgb(215,215,215);
+            }
+                
+            &:focus {
+                outline:0;
+            }
+        }
+
+    }
+    
+
+}
+
+// legal message
+.abus{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 8px;
+    font-family: sans-serif;
+    text-align: center;
+    z-index: 20;
+}
+
+//box shadow animation large
+@keyframes shadow{
+    from{
+        box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.5);
+    }
+    to{
+        box-shadow: 0px 0px 40px 2px rgba(255, 255, 255, 0.5);
+    }
+}
+
+//box shadow animation small
+@keyframes shadow2{
+    from{
+        box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.5);
+    }
+    to{
+        box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.5);
+    }
+}
+
+
+// win image animation
+@keyframes imgAnim{
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.05);
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+//flash animation for disabled div when the roulette turns
+@keyframes fade{
+    from{
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    to{
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+// scaling animation
+@keyframes scale{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.01);
+    }
+}
